@@ -1,4 +1,4 @@
 #!/bin/ash
 
-REVIEW=$(codegpt commit --preview)
+REVIEW=$(codegpt version)
 echo "review=$REVIEW" >> $GITHUB_OUTPUT
