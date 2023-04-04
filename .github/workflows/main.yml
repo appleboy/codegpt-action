@@ -1,0 +1,19 @@
+name: Integration Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CodeGPT
+        id: CodeGPT
+        # Put your action repo here
+        uses: pooriaghaedi/codegpt-action@master
+        
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+        
+
+      - name: Check outputs
+        run: |
+          echo "${{ steps.CodeGPT.outputs.REVIEW }}"
