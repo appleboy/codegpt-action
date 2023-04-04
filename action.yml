@@ -16,7 +16,7 @@ inputs:
   OPENAI_MODEL:  # Open AI Model
     description: 'Open AI Model'
     required: false
-    default: 'gpt-3.5-turbo'
+    default: 'gpt-3.5-turbo' 
 outputs:
   REVIEW: # Code review 
     description: 'Code review'
