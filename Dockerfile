@@ -11,8 +11,9 @@ LABEL maintainer="Bo-Yi Wu <appleboy.tw@gmail.com>" \
 LABEL org.opencontainers.image.source=https://github.com/appleboy/CodeGPT
 LABEL org.opencontainers.image.description="A CLI written in Go language that writes git commit messages or do a code review brief for you using ChatGPT AI."
 LABEL org.opencontainers.image.licenses=MIT
-
-COPY entrypoint.sh /entrypoint.sh
+ 
+WORKDIR /app
+COPY entrypoint.sh /app/entrypoint.sh
 
 RUN apk add --no-cache ca-certificates=20220614-r4 git=2.38.4-r1 curl && \
   rm -rf /var/cache/apk/* && \
@@ -22,7 +23,7 @@ RUN apk add --no-cache ca-certificates=20220614-r4 git=2.38.4-r1 curl && \
     ASSETVER=${LATESTVER//v} && \
     wget https://github.com/appleboy/CodeGPT/releases/download/$LATESTVER/CodeGPT-$ASSETVER-linux-amd64 && \
     mv CodeGPT-$ASSETVER-linux-amd64 /bin/codegpt && \
-    chmod +x /bin/codegpt ./entrypoint.sh
+    chmod +x /bin/codegpt /app/entrypoint.sh && pwd && ls
 
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
