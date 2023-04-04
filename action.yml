@@ -1,0 +1,15 @@
+name: 'CodeGPT'
+description: 'Github Action for CodeGPT'
+inputs:
+  OPENAI_API_KEY:  # Open AI API Key
+    description: 'Open AI API Key'
+    required: true
+    default: ''
+outputs:
+  REVIEW: # Code review 
+    description: 'Code review'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.OPENAI_API_KEY }}
