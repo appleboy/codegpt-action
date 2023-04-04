@@ -25,4 +25,4 @@ RUN apk add --no-cache ca-certificates=20220614-r4 git=2.38.4-r1 curl && \
     chmod +x /bin/codegpt ./entrypoint.sh
 
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
