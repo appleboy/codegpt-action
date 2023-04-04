@@ -7,7 +7,7 @@ jobs:
       - name: CodeGPT
         id: CodeGPT
         # Put your action repo here
-        uses: pooriaghaedi/codegpt-action@master
+        uses: pooriaghaedi/codegpt-action@main
         
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
