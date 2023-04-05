@@ -1,0 +1,12 @@
+name: Integration Test
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: code review action
+      uses: ./
+      with:
+        openai_api_key: ${{ secrets.openai_api_key }}
