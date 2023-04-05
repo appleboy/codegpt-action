@@ -5,4 +5,5 @@ set -eu
 export PLATFORM="github"
 
 echo "test"
-/bin/codegpt review --amend $*
+codegpt version
+codegpt review --amend $*
