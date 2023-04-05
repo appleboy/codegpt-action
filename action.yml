@@ -1,0 +1,27 @@
+name: 'CodeGPT'
+description: 'Github Action for CodeGPT'
+author: 'Bo-Yi Wu'
+inputs:
+  openai_api_key:  # Open AI API Key
+    description: 'OpenAI API Key'
+    required: true
+    default: ''
+  openai_base_url:  # Open AI Base URL
+    description: 'OpenAI Base URL'
+    required: false
+  openai_org_id:  # Open AI ORG ID
+    description: 'OpenAI ORG ID'
+    required: false
+    default: ''
+  openai_model:  # Open AI Model
+    description: 'OpenAI Model'
+    required: false
+    default: 'gpt-3.5-turbo'
+
+outputs:
+  review: # Code review
+    description: 'Code review'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
