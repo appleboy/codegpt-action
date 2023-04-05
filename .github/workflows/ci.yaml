@@ -14,4 +14,4 @@ jobs:
     - name: code review action
       uses: ./
       with:
-        openai_api_key: ${{ secrets.openai_api_key }}
+        openai_api_key: ${{ secrets.OPENAI_API_KEY }}
