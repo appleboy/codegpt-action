@@ -4,4 +4,6 @@ set -eu
 
 export PLATFORM="github"
 
-sh -c "/bin/codegpt review --amend"
+git config --global --add safe.directory /github/workspace
+
+sh -c "/bin/codegpt review --help"
