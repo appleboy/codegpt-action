@@ -9,4 +9,5 @@ codegpt version
 # ls -al
 # codegpt review --help
 # git log
+git diff --ignore-all-space --diff-algorithm=minimal --unified=0 HEAD^ HEAD
 codegpt review --amend
