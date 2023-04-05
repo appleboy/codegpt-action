@@ -4,4 +4,4 @@ set -eu
 
 export PLATFORM="github"
 
-sh -c "/bin/codegpt review"
+sh -c "/bin/codegpt review --amend"
